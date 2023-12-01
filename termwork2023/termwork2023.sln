@@ -1,0 +1,41 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.7.34031.279
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Transactions_Fraud_Detection", "Transactions_Fraud_Detection\Transactions_Fraud_Detection.csproj", "{94E301A5-7174-417F-9DC4-A681EC043A6C}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CSV_Into_SQL", "CSV_Into_SQL\CSV_Into_SQL.csproj", "{C6B43D02-8CA8-4718-BB0C-FB7511B60B5D}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Debug|x64 = Debug|x64
+		Release|Any CPU = Release|Any CPU
+		Release|x64 = Release|x64
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{94E301A5-7174-417F-9DC4-A681EC043A6C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{94E301A5-7174-417F-9DC4-A681EC043A6C}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{94E301A5-7174-417F-9DC4-A681EC043A6C}.Debug|x64.ActiveCfg = Debug|x64
+		{94E301A5-7174-417F-9DC4-A681EC043A6C}.Debug|x64.Build.0 = Debug|x64
+		{94E301A5-7174-417F-9DC4-A681EC043A6C}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{94E301A5-7174-417F-9DC4-A681EC043A6C}.Release|Any CPU.Build.0 = Release|Any CPU
+		{94E301A5-7174-417F-9DC4-A681EC043A6C}.Release|x64.ActiveCfg = Release|Any CPU
+		{94E301A5-7174-417F-9DC4-A681EC043A6C}.Release|x64.Build.0 = Release|Any CPU
+		{C6B43D02-8CA8-4718-BB0C-FB7511B60B5D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{C6B43D02-8CA8-4718-BB0C-FB7511B60B5D}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{C6B43D02-8CA8-4718-BB0C-FB7511B60B5D}.Debug|x64.ActiveCfg = Debug|x64
+		{C6B43D02-8CA8-4718-BB0C-FB7511B60B5D}.Debug|x64.Build.0 = Debug|x64
+		{C6B43D02-8CA8-4718-BB0C-FB7511B60B5D}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{C6B43D02-8CA8-4718-BB0C-FB7511B60B5D}.Release|Any CPU.Build.0 = Release|Any CPU
+		{C6B43D02-8CA8-4718-BB0C-FB7511B60B5D}.Release|x64.ActiveCfg = Release|x64
+		{C6B43D02-8CA8-4718-BB0C-FB7511B60B5D}.Release|x64.Build.0 = Release|x64
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {7893926A-15BF-433A-8209-70BE0C177DB4}
+	EndGlobalSection
+EndGlobal
