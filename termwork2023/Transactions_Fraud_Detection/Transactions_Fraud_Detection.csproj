@@ -191,6 +191,7 @@
     <EmbeddedResource Include="Teach_Model.resx">
       <DependentUpon>Teach_Model.cs</DependentUpon>
     </EmbeddedResource>
+    <None Include="card_transdata 1.csv" />
     <None Include="card_transdata.csv" />
     <None Include="Credit_Card_InfoDataSet.xsc">
       <DependentUpon>Credit_Card_InfoDataSet.xsd</DependentUpon>

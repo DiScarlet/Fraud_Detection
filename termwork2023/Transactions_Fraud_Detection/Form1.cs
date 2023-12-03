@@ -14,6 +14,7 @@ using Microsoft.ML.Trainers.FastTree;
 
 namespace Transactions_Fraud_Detection
 {
+    
     public partial class Form1 : Form
     {
         public Form1()
@@ -168,7 +169,7 @@ namespace Transactions_Fraud_Detection
             var context = new MLContext();
 
             //завантажую файли з сsv файла
-            var data = context.Data.LoadFromTextFile<Transaction_Info>("C:\\Users\\anton\\LIT\\termwork\\termwork2023\\Transactions_Fraud_Detection\\card_transdata.csv", separatorChar: ',', hasHeader: true);
+            var data = context.Data.LoadFromTextFile<Transaction_Info>("card_transdata.csv", separatorChar: ',', hasHeader: true);
 
 
             // розділяю файл 80/20 - для навчання і тренування
@@ -197,12 +198,6 @@ namespace Transactions_Fraud_Detection
             var model = trainingPipeline.Fit(dataSplit.TrainSet);
 
             context.Model.Save(model, dataSplit.TrainSet.Schema, "model.zip");
-        }
-
-        public class CreditCardFraudPrediction
-        {
-            [ColumnName("PredictedLabel")]
-            public bool PredictedLabel;
         }
 
         private void modelMetricsBtn_Click(object sender, EventArgs e)
@@ -243,7 +238,7 @@ namespace Transactions_Fraud_Detection
                 bool[] bools = new bool[count];
 
                 var context = new MLContext();
-                var data = context.Data.LoadFromTextFile<Transaction_Info>("C:\\Users\\anton\\LIT\\termwork\\termwork2023\\Transactions_Fraud_Detection\\card_transdata.csv", separatorChar: ',', hasHeader: true);
+                var data = context.Data.LoadFromTextFile<Transaction_Info>("card_transdata.csv", separatorChar: ',', hasHeader: true);
                 var dataSplit = context.Data.TrainTestSplit(data, testFraction: 0.2);
 
                 DataViewSchema modelSchema;
@@ -274,7 +269,7 @@ namespace Transactions_Fraud_Detection
                         repeat_retailer = repeatretailer,
                         used_chip = usedchip,
                         used_pin_number = usedpin_number,
-                        online_order = onlineorder,
+                        online_order = onlineorder
                     };
 
                     //
@@ -338,5 +333,11 @@ namespace Transactions_Fraud_Detection
             Save.Enabled = false;
             IsAnyChanges = false;
         }
+    }
+
+    public class CreditCardFraudPrediction
+    {
+        [ColumnName("PredictedLabel")]
+        public bool PredictedLabel;
     }
 }
