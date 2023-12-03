@@ -49,7 +49,7 @@ namespace termwork2023
 
         private void button2_Click_1(object sender, EventArgs e)
         {      
-        SqlConnection sc = new SqlConnection("Server = TRAVELMATEDIANA;  Initial Catalog = Credit_Card_Info; Integrated Security = SSPI;");
+        SqlConnection sc = new SqlConnection("Server = DESKTOP-SG5JFA2;  Initial Catalog = Credit_Card_Info; Integrated Security = SSPI;");
             sc.Open();
             SqlCommand insert;
 
@@ -143,14 +143,14 @@ namespace termwork2023
                         row.fraud = false;
                 }*/
                 //t = $"insert into dbo.Cards_Transactions values ('{r.distance_from_home}'," +
-                t = $"insert into dbo.User_Transactions values ('{r.distance_from_home}'," +
+                t = $"insert into dbo.Users_Transactions values ('{r.distance_from_home}'," +
                     $"'{r.distance_from_last_transaction}'," +
                     $"'{r.ratio_to_median_purchase_price}', " +
                     $"'{row.repeat_retailer}'," +
                     $"'{row.used_chip}'," +
                     $"'{row.used_pin_number}'," +
-                    $"'{row.online_order}')"; 
-                    //$"'{row.fraud}')";
+                    $"'{row.online_order}',"+ 
+                    $"'')";
                 insert = new SqlCommand(t, sc);
                 insert.ExecuteNonQuery();
             }

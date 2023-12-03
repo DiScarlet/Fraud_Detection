@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace Transactions_Fraud_Detection
 {
-    internal class Transaction_Info
+    public class Transaction_Info
     {
         [LoadColumn(0)] public float distance_from_home { get; set; }
         [LoadColumn(1)] public float distance_from_last_transaction { get; set; }
