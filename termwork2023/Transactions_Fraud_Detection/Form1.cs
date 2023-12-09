@@ -204,10 +204,10 @@ namespace Transactions_Fraud_Detection
         {
             Metrics_Form metricsForm = new Metrics_Form();
 
-            ((Label)metricsForm.Controls["label2"]).Text = accuracy.ToString();
-            ((Label)metricsForm.Controls["label3"]).Text = precision.ToString();
-            ((Label)metricsForm.Controls["label5"]).Text = recall.ToString();
-            ((Label)metricsForm.Controls["label7"]).Text = F1.ToString();
+            ((Label)metricsForm.Controls["label2"]).Text = Convert.ToString(Math.Round(accuracy, 5));
+            ((Label)metricsForm.Controls["label3"]).Text = Convert.ToString(Math.Round(precision, 5));
+            ((Label)metricsForm.Controls["label5"]).Text = Convert.ToString(Math.Round(recall, 5));
+            ((Label)metricsForm.Controls["label7"]).Text = Convert.ToString(Math.Round(F1, 5));
 
             metricsForm.ShowDialog();
         }
