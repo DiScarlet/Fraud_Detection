@@ -17,6 +17,11 @@ namespace Transactions_Fraud_Detection
             InitializeComponent();
         }
 
+        /// <summary>
+        /// button which accepts inserting new transaction
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void AddDataBtn_Click(object sender, EventArgs e)
         {
             Insert_Form insrtForm = new Insert_Form();

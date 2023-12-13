@@ -273,3 +273,4 @@ C:\Users\Dina\source\repos\Termwork\Fraud_Detection\termwork2023\CSV_Into_SQL\ob
 C:\Users\Dina\source\repos\Termwork\Fraud_Detection\termwork2023\CSV_Into_SQL\obj\x64\Debug\CSV_Into_SQL.csproj.CopyComplete
 C:\Users\Dina\source\repos\Termwork\Fraud_Detection\termwork2023\CSV_Into_SQL\obj\x64\Debug\termwork2023.exe
 C:\Users\Dina\source\repos\Termwork\Fraud_Detection\termwork2023\CSV_Into_SQL\obj\x64\Debug\termwork2023.pdb
+C:\Users\Dina\source\repos\Termwork\Fraud_Detection\termwork2023\CSV_Into_SQL\obj\x64\Debug\termwork2023.ServerNameForm.resources

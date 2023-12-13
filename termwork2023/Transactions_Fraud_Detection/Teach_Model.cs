@@ -17,12 +17,22 @@ namespace Transactions_Fraud_Detection
         {
             InitializeComponent();
         }
-
+        
+        /// <summary>
+        /// button which accepts retraining the model
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void button1_Click(object sender, EventArgs e)
         {
             this.DialogResult = DialogResult.OK;
         }
 
+        /// <summary>
+        /// button which declines retraining the model
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void button2_Click(object sender, EventArgs e)
         {
             this.DialogResult = DialogResult.Cancel;

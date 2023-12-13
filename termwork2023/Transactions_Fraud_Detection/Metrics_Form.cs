@@ -17,6 +17,11 @@ namespace Transactions_Fraud_Detection
             InitializeComponent();
         }
 
+        /// <summary>
+        /// button for closing metrics form
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void button1_Click(object sender, EventArgs e)
         {
             this.Close();

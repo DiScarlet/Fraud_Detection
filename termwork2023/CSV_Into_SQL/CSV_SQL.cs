@@ -25,16 +25,40 @@ namespace termwork2023
         public CSV_SQL()
         {
             InitializeComponent();
+            button2.Enabled = false;
         }
 
-       private void button1_Click(object sender, EventArgs e)
+        string sqlServerName = "";
+        
+        /// <summary>
+        /// button for choosing file to upload from and SQL Server Name
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void button1_Click(object sender, EventArgs e)
         {
+            ServerNameForm serverNameForm = new ServerNameForm();
+            if (serverNameForm.ShowDialog() == DialogResult.OK)
+            {
+                sqlServerName = serverNameForm.serverName;
+            }
+
+            while (sqlServerName == null)
+            {
+                MessageBox.Show("Please type in your server name", "Information", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                serverNameForm = new ServerNameForm();
+                sqlServerName = serverNameForm.serverName;
+            }
+
+
             if (openFileDialog1.ShowDialog(this) == DialogResult.OK)
             {
                 label1.Text = openFileDialog1.FileName;
                 button2.Enabled = true;
             }
         }
+
+        // new class which contains all properties of the Transaction
         public class Card_Transaction
         {
             public double distance_from_home;
@@ -47,9 +71,14 @@ namespace termwork2023
             //public bool fraud;
         }
 
+        /// <summary>
+        /// uploding selected file to SQL Server Database
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void button2_Click_1(object sender, EventArgs e)
-        {      
-        SqlConnection sc = new SqlConnection("Server = DESKTOP-SG5JFA2;  Initial Catalog = Credit_Card_Info; Integrated Security = SSPI;");
+        {
+            SqlConnection sc = new SqlConnection($"Server = {sqlServerName};  Initial Catalog = Credit_Card_Info; Integrated Security = SSPI;");
             sc.Open();
             SqlCommand insert;
 
@@ -142,8 +171,7 @@ namespace termwork2023
                     else
                         row.fraud = false;
                 }*/
-                //t = $"insert into dbo.Cards_Transactions values ('{r.distance_from_home}'," +
-                t = $"insert into dbo.Users_Transactions values ('{r.distance_from_home}'," +
+                t = $"insert into dbo.User_Transactions values ('{r.distance_from_home}'," +
                     $"'{r.distance_from_last_transaction}'," +
                     $"'{r.ratio_to_median_purchase_price}', " +
                     $"'{row.repeat_retailer}'," +

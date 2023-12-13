@@ -13,6 +13,9 @@ namespace UnitTestProject
     [TestClass]
     public class UnitTestFraudDetection
     {
+        /// <summary>
+        /// unit test for checking logic of classification of fradulent transactions
+        /// </summary>
         [TestMethod]
         public void TestFraudTransaction()
         {
@@ -39,6 +42,9 @@ namespace UnitTestProject
             Assert.IsTrue(predictedLabel, "Fraudulent transaction was detected as legitimate.");
         }
 
+        /// <summary>
+        /// unit test for checking logic of classification of legitimate transactions
+        /// </summary>
         [TestMethod]
         public void TestLegitimateTransaction()
         {

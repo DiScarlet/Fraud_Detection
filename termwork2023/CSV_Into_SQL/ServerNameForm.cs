@@ -4,21 +4,22 @@ using System.ComponentModel;
 using System.Data;
 using System.Drawing;
 using System.Linq;
+using System.Security.Cryptography.X509Certificates;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace Transactions_Fraud_Detection
+namespace termwork2023
 {
-    public partial class Closing_Save : Form
+    public partial class ServerNameForm : Form
     {
-        public Closing_Save()
+        public ServerNameForm()
         {
             InitializeComponent();
         }
 
         /// <summary>
-        /// button for exiting without saving changes
+        /// button for filling in user's SQl Server name
         /// </summary>
         /// <param name="sender"></param>
         /// <param name="e"></param>
@@ -27,14 +28,9 @@ namespace Transactions_Fraud_Detection
             this.DialogResult = DialogResult.OK;
         }
 
-        /// <summary>
-        /// button for cancelation of operation of exiting without saving changes
-        /// </summary>
-        /// <param name="sender"></param>
-        /// <param name="e"></param>
-        private void button2_Click(object sender, EventArgs e)
+        public string serverName
         {
-            this.DialogResult = DialogResult.Cancel;
+            get { return textBox1.Text; }
         }
     }
 }
