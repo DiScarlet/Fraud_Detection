@@ -62,3 +62,5 @@ C:\Users\igora\source\repos\Fraud_Desktop\Fraud_Detection\termwork2023\UnitTestP
 C:\Users\igora\source\repos\Fraud_Desktop\Fraud_Detection\termwork2023\UnitTestProject\obj\x64\Release\UnitTestProject.csproj.CopyComplete
 C:\Users\igora\source\repos\Fraud_Desktop\Fraud_Detection\termwork2023\UnitTestProject\obj\x64\Release\UnitTestProject.dll
 C:\Users\igora\source\repos\Fraud_Desktop\Fraud_Detection\termwork2023\UnitTestProject\obj\x64\Release\UnitTestProject.pdb
+C:\Users\igora\source\repos\Fraud_Desktop\Fraud_Detection\termwork2023\UnitTestProject\bin\x64\Release\Docs\User Manual.docx
+C:\Users\igora\source\repos\Fraud_Desktop\Fraud_Detection\termwork2023\UnitTestProject\bin\x64\Release\Docs\SQL_CreditCardInfo_setup.sql
