@@ -37,20 +37,6 @@ namespace termwork2023
         /// <param name="e"></param>
         private void button1_Click(object sender, EventArgs e)
         {
-            ServerNameForm serverNameForm = new ServerNameForm();
-            if (serverNameForm.ShowDialog() == DialogResult.OK)
-            {
-                sqlServerName = serverNameForm.serverName;
-            }
-
-            while (sqlServerName == null)
-            {
-                MessageBox.Show("Please type in your server name", "Information", MessageBoxButtons.OK, MessageBoxIcon.Warning);
-                serverNameForm = new ServerNameForm();
-                sqlServerName = serverNameForm.serverName;
-            }
-
-
             if (openFileDialog1.ShowDialog(this) == DialogResult.OK)
             {
                 label1.Text = openFileDialog1.FileName;
@@ -78,7 +64,7 @@ namespace termwork2023
         /// <param name="e"></param>
         private void button2_Click_1(object sender, EventArgs e)
         {
-            SqlConnection sc = new SqlConnection($"Server = {sqlServerName};  Initial Catalog = Credit_Card_Info; Integrated Security = SSPI;");
+            SqlConnection sc = new SqlConnection($"Initial Catalog = Credit_Card_Info; Integrated Security = SSPI;");
             sc.Open();
             SqlCommand insert;
 

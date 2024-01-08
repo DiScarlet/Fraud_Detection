@@ -223,3 +223,8 @@ C:\Users\igora\source\repos\Fraud_Desktop\Fraud_Detection\termwork2023\Transacti
 C:\Users\igora\source\repos\Fraud_Desktop\Fraud_Detection\termwork2023\Transactions_Fraud_Detection\bin\x64\Debug\Transactions_Fraud_Detection.application
 C:\Users\igora\source\repos\Fraud_Desktop\Fraud_Detection\termwork2023\Transactions_Fraud_Detection\obj\x64\Debug\Transactions_Fraud_Detection.exe.manifest
 C:\Users\igora\source\repos\Fraud_Desktop\Fraud_Detection\termwork2023\Transactions_Fraud_Detection\obj\x64\Debug\Transactions_Fraud_Detection.application
+C:\Users\Dina\source\repos\Termwork\UnitTest\Fraud_Detection\termwork2023\Transactions_Fraud_Detection\bin\x64\Debug\card_transdata.csv
+C:\Users\Dina\source\repos\Termwork\UnitTest\Fraud_Detection\termwork2023\Transactions_Fraud_Detection\bin\x64\Debug\Transactions_Fraud_Detection.exe.manifest
+C:\Users\Dina\source\repos\Termwork\UnitTest\Fraud_Detection\termwork2023\Transactions_Fraud_Detection\bin\x64\Debug\Transactions_Fraud_Detection.application
+C:\Users\Dina\source\repos\Termwork\UnitTest\Fraud_Detection\termwork2023\Transactions_Fraud_Detection\obj\x64\Debug\Transactions_Fraud_Detection.exe.manifest
+C:\Users\Dina\source\repos\Termwork\UnitTest\Fraud_Detection\termwork2023\Transactions_Fraud_Detection\obj\x64\Debug\Transactions_Fraud_Detection.application
