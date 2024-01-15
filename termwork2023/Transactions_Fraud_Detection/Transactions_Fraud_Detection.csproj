@@ -196,9 +196,9 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <EntityDeploy Include="Docs\SQL_CreditCardInfo_setup.sql">
+    <None Include="Docs\SQL_CreditCardInfo_setup.sql">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </EntityDeploy>
+    </None>
     <EmbeddedResource Include="Closing_Save.resx">
       <DependentUpon>Closing_Save.cs</DependentUpon>
     </EmbeddedResource>
@@ -249,9 +249,9 @@
       <DesignTimeSharedInput>True</DesignTimeSharedInput>
     </Compile>
     <None Include="Transactions_Fraud_Detection_TemporaryKey.pfx" />
-    <EntityDeploy Include="Docs\User Manual.docx">
+    <None Include="Docs\User Manual.docx">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </EntityDeploy>
+    </None>
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />

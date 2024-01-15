@@ -223,3 +223,5 @@ C:\Users\igora\source\repos\Fraud_Desktop\Fraud_Detection\termwork2023\Transacti
 C:\Users\igora\source\repos\Fraud_Desktop\Fraud_Detection\termwork2023\Transactions_Fraud_Detection\bin\x64\Debug\Transactions_Fraud_Detection.application
 C:\Users\igora\source\repos\Fraud_Desktop\Fraud_Detection\termwork2023\Transactions_Fraud_Detection\obj\x64\Debug\Transactions_Fraud_Detection.exe.manifest
 C:\Users\igora\source\repos\Fraud_Desktop\Fraud_Detection\termwork2023\Transactions_Fraud_Detection\obj\x64\Debug\Transactions_Fraud_Detection.application
+C:\Users\igora\source\repos\Fraud_Desktop\Fraud_Detection\termwork2023\Transactions_Fraud_Detection\bin\x64\Debug\Docs\SQL_CreditCardInfo_setup.sql
+C:\Users\igora\source\repos\Fraud_Desktop\Fraud_Detection\termwork2023\Transactions_Fraud_Detection\bin\x64\Debug\Docs\User Manual.docx

@@ -155,7 +155,6 @@ namespace Transactions_Fraud_Detection
 
                 user_TransactionsTableAdapter.Update(this.credit_Card_InfoDataSet.User_Transactions);
 
-                dataGridView1.DataSource = credit_Card_InfoDataSet.User_Transactions;
                 Save.Enabled = false;
                 IsAnyChanges = false;
             }

@@ -270,14 +270,14 @@
     </dependentAssembly>
   </dependency>
   <dependency>
-    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="Transactions_Fraud_Detection.exe" size="915936">
+    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="Transactions_Fraud_Detection.exe" size="915424">
       <assemblyIdentity name="Transactions_Fraud_Detection" version="1.0.0.0" language="neutral" processorArchitecture="amd64" />
       <hash>
         <dsig:Transforms>
           <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
         </dsig:Transforms>
         <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
-        <dsig:DigestValue>rlwkdSQ5/p8v46Q8VvYujiaVSd6/h9dnuk/rKbQ0Y+w=</dsig:DigestValue>
+        <dsig:DigestValue>2ZzRgOJ9FIBXgc3cfoqUwwOFsHXHMz3vywhvFjB8nts=</dsig:DigestValue>
       </hash>
     </dependentAssembly>
   </dependency>
