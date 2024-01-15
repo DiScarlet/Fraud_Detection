@@ -58,3 +58,5 @@ C:\Users\igora\source\repos\Fraud_Desktop\Fraud_Detection\termwork2023\Transacti
 C:\Users\igora\source\repos\Fraud_Desktop\Fraud_Detection\termwork2023\Transactions_Fraud_Detection\obj\x64\Release\Transactions_Fraud_Detection.exe
 C:\Users\igora\source\repos\Fraud_Desktop\Fraud_Detection\termwork2023\Transactions_Fraud_Detection\obj\x64\Release\Transactions_Fraud_Detection.pdb
 C:\Users\igora\source\repos\Fraud_Desktop\Fraud_Detection\termwork2023\Transactions_Fraud_Detection\bin\x64\Release\card_transdata.csv
+C:\Users\igora\source\repos\Fraud_Desktop\Fraud_Detection\termwork2023\Transactions_Fraud_Detection\bin\x64\Release\Docs\SQL_CreditCardInfo_setup.sql
+C:\Users\igora\source\repos\Fraud_Desktop\Fraud_Detection\termwork2023\Transactions_Fraud_Detection\bin\x64\Release\Docs\User Manual.docx
