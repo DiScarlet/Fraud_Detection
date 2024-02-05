@@ -148,15 +148,6 @@ namespace termwork2023
                         row.online_order = false;
                 }
 
-                /*t = r.fraud;
-                t = t.Replace('.', CultureInfo.CurrentUICulture.NumberFormat.NumberDecimalSeparator[0]);
-                if (Double.TryParse(t, out d))
-                {
-                    if (d > 0.1)
-                        row.fraud = true;
-                    else
-                        row.fraud = false;
-                }*/
                 t = $"insert into dbo.User_Transactions values ('{r.distance_from_home}'," +
                     $"'{r.distance_from_last_transaction}'," +
                     $"'{r.ratio_to_median_purchase_price}', " +
@@ -168,10 +159,22 @@ namespace termwork2023
                 insert = new SqlCommand(t, sc);
                 insert.ExecuteNonQuery();
             }
-                reader.Close();
-                sc.Close();
+            SqlCommand update = new SqlCommand();
+            SetNullForFraud(sc, update);
+
+            reader.Close();
+            sc.Close();
 
             MessageBox.Show("Operation completed.");
+        }
+
+        void SetNullForFraud(SqlConnection sc, SqlCommand update)
+        {
+            string command = $"UPDATE Credit_Card_Info.dbo.User_Transactions " +
+                $"SET fraud = NULL ";
+            update.Connection = sc;
+            update.CommandText = command;
+            update.ExecuteNonQuery();
         }
     }
 }

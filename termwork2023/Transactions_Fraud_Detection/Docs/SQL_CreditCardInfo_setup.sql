@@ -10,6 +10,9 @@ SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
 GO
+IF OBJECT_ID('Credit_Card_Info.dbo.User_Transactions', 'U') IS NOT NULL
+    DROP TABLE Credit_Card_Info.dbo.User_Transactions;
+GO
 CREATE TABLE [dbo].[User_Transactions](
 	[Transactions_ID] [int] IDENTITY(1,1) NOT NULL,
 	[distance_from_home] [real] NULL,
