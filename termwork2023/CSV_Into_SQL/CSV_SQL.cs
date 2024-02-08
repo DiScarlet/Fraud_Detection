@@ -72,10 +72,9 @@ namespace termwork2023
             var csv = new CsvReader(reader, CultureInfo.InvariantCulture);
 
             // read CSV file
-            var records = csv.GetRecords<dynamic>();
             reader = new StreamReader(openFileDialog1.FileName);
             csv = new CsvReader(reader, CultureInfo.InvariantCulture);
-            records = csv.GetRecords<dynamic>();
+            var records = csv.GetRecords<dynamic>();
 
 
             // output
