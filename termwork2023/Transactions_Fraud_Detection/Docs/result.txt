@@ -1,5 +1,3 @@
 Changed database context to 'master'.
-Msg 1801, Level 16, State 3, Server DESKTOP-SG5JFA2, Line 2
-Database 'Credit_Card_Info' already exists. Choose a different database name.
 Changed database context to 'Credit_Card_Info'.
 Changed database context to 'master'.

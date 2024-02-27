@@ -17,6 +17,7 @@ using System.Data.SqlTypes;
 using CsvHelper;
 using System.Reflection;
 using static System.Windows.Forms.VisualStyles.VisualStyleElement.ToolBar;
+using System.Threading;
 
 namespace termwork2023
 {
@@ -29,7 +30,7 @@ namespace termwork2023
         }
 
         string sqlServerName = "";
-        
+
         /// <summary>
         /// button for choosing file to upload from and SQL Server Name
         /// </summary>
@@ -37,10 +38,18 @@ namespace termwork2023
         /// <param name="e"></param>
         private void button1_Click(object sender, EventArgs e)
         {
-            if (openFileDialog1.ShowDialog(this) == DialogResult.OK)
+            try
             {
-                label1.Text = openFileDialog1.FileName;
-                button2.Enabled = true;
+                if (openFileDialog1.ShowDialog(this) == DialogResult.OK)
+                {
+                    label1.Text = openFileDialog1.FileName;
+                    button2.Enabled = true;
+                }
+            }
+            catch
+            {
+                MessageBox.Show("Cannot open the file.", "Warning", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return;
             }
         }
 
@@ -68,103 +77,110 @@ namespace termwork2023
             sc.Open();
             SqlCommand insert;
 
-            var reader = new StreamReader(openFileDialog1.FileName);
-            var csv = new CsvReader(reader, CultureInfo.InvariantCulture);
-
             // read CSV file
-            reader = new StreamReader(openFileDialog1.FileName);
-            csv = new CsvReader(reader, CultureInfo.InvariantCulture);
-            var records = csv.GetRecords<dynamic>();
-
-
-            // output
-            foreach (var r in records)
+            try
             {
-                Card_Transaction row = new Card_Transaction();
-                string t;
-                double d;
+                var reader = new StreamReader(openFileDialog1.FileName);
+                var csv = new CsvReader(reader, CultureInfo.InvariantCulture);
+                var records = csv.GetRecords<dynamic>();
 
-                t = r.distance_from_home;
-                t = t.Replace('.', CultureInfo.CurrentUICulture.NumberFormat.NumberDecimalSeparator[0]);
-
-                if (Double.TryParse(t, out d))
+                Thread.CurrentThread.CurrentCulture = new CultureInfo("ua");
+                // output
+                foreach (var r in records)
                 {
-                    row.distance_from_home = d;
+                    Card_Transaction row = new Card_Transaction();
+                    string t;
+                    double d;
+
+                    t = r.distance_from_home;
+                    t = t.Replace('.', CultureInfo.CurrentCulture.NumberFormat.NumberDecimalSeparator[0]);
+                    if (Double.TryParse(t, out d))
+                    {
+                        row.distance_from_home = d;
+                    }
+
+                    t = r.distance_from_last_transaction;
+                    t = t.Replace('.', CultureInfo.CurrentUICulture.NumberFormat.NumberDecimalSeparator[0]);
+                    if (Double.TryParse(t, out d))
+                    {
+                        row.distance_from_last_transaction = d;
+                    }
+
+                    t = r.ratio_to_median_purchase_price;
+                    t = t.Replace('.', CultureInfo.CurrentUICulture.NumberFormat.NumberDecimalSeparator[0]);
+                    if (Double.TryParse(t, out d))
+                    {
+                        row.ratio_to_median_purchase_price = d;
+                    }
+
+                    t = r.repeat_retailer;
+                    t = t.Replace('.', CultureInfo.CurrentUICulture.NumberFormat.NumberDecimalSeparator[0]);
+                    if (Double.TryParse(t, out d))
+                    {
+                        if (d > 0.1)
+                            row.repeat_retailer = true;
+                        else
+                            row.repeat_retailer = false;
+                    }
+
+                    t = r.used_chip;
+                    t = t.Replace('.', CultureInfo.CurrentUICulture.NumberFormat.NumberDecimalSeparator[0]);
+                    if (Double.TryParse(t, out d))
+                    {
+                        if (d > 0.1)
+                            row.used_chip = true;
+                        else
+                            row.used_chip = false;
+                    }
+
+                    t = r.used_pin_number;
+                    t = t.Replace('.', CultureInfo.CurrentUICulture.NumberFormat.NumberDecimalSeparator[0]);
+                    if (Double.TryParse(t, out d))
+                    {
+                        if (d > 0.1)
+                            row.used_pin_number = true;
+                        else
+                            row.used_pin_number = false;
+                    }
+
+                    t = r.online_order;
+                    t = t.Replace('.', CultureInfo.CurrentUICulture.NumberFormat.NumberDecimalSeparator[0]);
+                    if (Double.TryParse(t, out d))
+                    {
+                        if (d > 0.1)
+                            row.online_order = true;
+                        else
+                            row.online_order = false;
+                    }
+
+                    t = $"insert into dbo.User_Transactions values ('{r.distance_from_home}'," +
+                        $"'{r.distance_from_last_transaction}'," +
+                        $"'{r.ratio_to_median_purchase_price}', " +
+                        $"'{row.repeat_retailer}'," +
+                        $"'{row.used_chip}'," +
+                        $"'{row.used_pin_number}'," +
+                        $"'{row.online_order}'," +
+                        $"'')";
+                    insert = new SqlCommand(t, sc);
+                    insert.ExecuteNonQuery();
+
                 }
 
-                t = r.distance_from_last_transaction;
-                t = t.Replace('.', CultureInfo.CurrentUICulture.NumberFormat.NumberDecimalSeparator[0]);
-                if (Double.TryParse(t, out d))
-                {
-                    row.distance_from_last_transaction = d;
-                }
-
-                t = r.ratio_to_median_purchase_price;
-                t = t.Replace('.', CultureInfo.CurrentUICulture.NumberFormat.NumberDecimalSeparator[0]);
-                if (Double.TryParse(t, out d))
-                {
-                    row.ratio_to_median_purchase_price = d;
-                }
-
-                t = r.repeat_retailer;
-                t = t.Replace('.', CultureInfo.CurrentUICulture.NumberFormat.NumberDecimalSeparator[0]);
-                if (Double.TryParse(t, out d))
-                {
-                    if (d > 0.1)
-                        row.repeat_retailer = true;
-                    else
-                        row.repeat_retailer = false;
-                }
 
 
-                t = r.used_chip;
-                t = t.Replace('.', CultureInfo.CurrentUICulture.NumberFormat.NumberDecimalSeparator[0]);
-                if (Double.TryParse(t, out d))
-                {
-                    if (d > 0.1)
-                        row.used_chip = true;
-                    else
-                        row.used_chip = false;
-                }
+                SqlCommand update = new SqlCommand();
+                SetNullForFraud(sc, update);
 
-                t = r.used_pin_number;
-                t = t.Replace('.', CultureInfo.CurrentUICulture.NumberFormat.NumberDecimalSeparator[0]);
-                if (Double.TryParse(t, out d))
-                {
-                    if (d > 0.1)
-                        row.used_pin_number = true;
-                    else
-                        row.used_pin_number = false;
-                }
+                reader.Close();
+                sc.Close();
 
-                t = r.online_order;
-                t = t.Replace('.', CultureInfo.CurrentUICulture.NumberFormat.NumberDecimalSeparator[0]);
-                if (Double.TryParse(t, out d))
-                {
-                    if (d > 0.1)
-                        row.online_order = true;
-                    else
-                        row.online_order = false;
-                }
-
-                t = $"insert into dbo.User_Transactions values ('{r.distance_from_home}'," +
-                    $"'{r.distance_from_last_transaction}'," +
-                    $"'{r.ratio_to_median_purchase_price}', " +
-                    $"'{row.repeat_retailer}'," +
-                    $"'{row.used_chip}'," +
-                    $"'{row.used_pin_number}'," +
-                    $"'{row.online_order}',"+ 
-                    $"'')";
-                insert = new SqlCommand(t, sc);
-                insert.ExecuteNonQuery();
+                MessageBox.Show("Operation completed.", "Finished", MessageBoxButtons.OK, MessageBoxIcon.Information);
             }
-            SqlCommand update = new SqlCommand();
-            SetNullForFraud(sc, update);
+            catch
+            {
+                MessageBox.Show("An exeption occured while reading the file", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
 
-            reader.Close();
-            sc.Close();
-
-            MessageBox.Show("Operation completed.");
         }
 
         void SetNullForFraud(SqlConnection sc, SqlCommand update)
