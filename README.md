@@ -8,3 +8,5 @@ Setup instructions for the project:
 4. Go to Documentation folder in Transactions_Fraud_Detection project
 4.1. Run the following command: sqlcmd -C -i SQL_CreditCardInfo_setup.sql -o result.txt
 5. Run Setup.exe, use default options
+6. Upload data
+7. Run the Fraud_Detection's Setup.exe
